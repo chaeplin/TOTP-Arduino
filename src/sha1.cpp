@@ -1,6 +1,10 @@
 #include <string.h>
-#include <avr/io.h>
-#include <avr/pgmspace.h>
+#ifdef ESP8266
+  #include <pgmspace.h>
+#else
+  #include <avr/io.h>
+  #include <avr/pgmspace.h>
+#endif
 #include "sha1.h"
 
 #define SHA1_K0 0x5a827999
